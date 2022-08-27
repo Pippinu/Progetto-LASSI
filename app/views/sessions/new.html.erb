@@ -19,12 +19,12 @@
 
                 <%= form_with url: sessions_path do |f| %>
                   <div class="form-floating mb-2">
-                    <%= f.text_field :email, :placeholder => "Username", :class => "form-control" %>
+                    <%= f.text_field :username, :placeholder => "Username", :class => "form-control" %>
                     <label class="form-label" for="form2Example11">Username</label>
                   </div>
 
                   <div class="form-floating mb-3">
-                    <%= f.password_field :pass, :placeholder => "Password", :class => "form-control" %>
+                    <%= f.password_field :password, :placeholder => "Password", :class => "form-control" %>
                     <label class="form-label" for="form2Example22">Password</label>
                   </div>
 

@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+  <%= content_tag :h3, flash[:notice] %>
+<% end %>
+
 <%= stylesheet_link_tag "homepage", "data-turbo-track": "reload" %>
 
 <section class="h-100 gradient-form" style="background-color: #eee;">
@@ -15,17 +19,17 @@
 
                 <%= form_with model: @user do |f| %>
                   <div class="form-floating mb-2">
-                    <%= f.text_field :email, :placeholder => "Username", :class => "form-control" %>
+                    <%= f.text_field :username, :placeholder => "Username", :class => "form-control" %>
                     <label class="form-label" for="form2Example11">Username</label>
                   </div>
 
                   <div class="form-floating mb-2">
-                    <%= f.password_field :pass, :placeholder => "Password", :class => "form-control" %>
+                    <%= f.password_field :password, :placeholder => "Password", :class => "form-control" %>
                     <label class="form-label" for="form2Example22">Password</label>
                   </div>
 
                   <div class="form-floating mb-2">
-                    <%= f.password_field :passConfirm, :placeholder => "Conferma Password", :class => "form-control" %>
+                    <%= f.password_field :password_confirmation, :placeholder => "Conferma Password", :class => "form-control" %>
                     <label class="form-label" for="form2Example22">Conferma Password</label>
                   </div>
 
