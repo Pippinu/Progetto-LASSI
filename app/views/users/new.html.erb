@@ -13,42 +13,28 @@
                     <%= link_to image_tag("https://cdn.cdnlogo.com/logos/y/92/youtube.svg", alt: "logo", style: "width: 185px;"), root_path %>
                 </div>
 
-                <form>
+                <%= form_with model: @user do |f| %>
                   <div class="form-floating mb-2">
-                    <input type="email" id="form2Example11" placeholder="Username" class="form-control">
+                    <%= f.text_field :email, :placeholder => "Username", :class => "form-control" %>
                     <label class="form-label" for="form2Example11">Username</label>
                   </div>
 
                   <div class="form-floating mb-2">
-                    <input type="password" id="form2Example22" placeholder="Password" class="form-control" />
+                    <%= f.password_field :pass, :placeholder => "Password", :class => "form-control" %>
                     <label class="form-label" for="form2Example22">Password</label>
                   </div>
 
                   <div class="form-floating mb-2">
-                    <input type="password" id="form2Example22" placeholder="Password" class="form-control" />
+                    <%= f.password_field :passConfirm, :placeholder => "Conferma Password", :class => "form-control" %>
                     <label class="form-label" for="form2Example22">Conferma Password</label>
                   </div>
 
-                  <select class="form-select mb-3" aria-label=".form-select example" >
-                    <option selected>Seleziona un ruolo</option>
-                    <option value="1">Guest</option>
-                    <option value="2">Utente</option>
-                    <option value="3">Manager</option>
-                  </select>
+                  <%= f.select(:ruolo, options_for_select([['Guest', 1], ['Utente', 2], ['Manager', 3]]), {}, {class: "form-select mb-3"}) %>
 
                   <div class="text-center pt-1 mb-5 pb-1 d-grid gap-2">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">
-                        Login
-                    </button>
+                    <%= f.submit "Registrati", :class => "btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"%>
                   </div>
-
-                  <div class="d-flex align-items-center justify-content-center pb-4">
-                    <p class="mb-0 me-2">Non hai un account?</p>
-                        <%= link_to "Registrati", signin_path, :class => "btn btn-danger" %>
-                  </div>
-
-                </form>
-
+                <% end %>
               </div>
             </div>
             
