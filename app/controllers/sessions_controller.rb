@@ -1,13 +1,13 @@
 class SessionsController < ApplicationController
-  # Non richiede login prima delle action Create e New
+  # Non richiede login prima delle action Create e New, before_action applicato in application_controller
   skip_before_action :require_login, only: [:create, :new]
 
   def new
   end
 
   def create
-    session_params = params.permit(:email, :password, :ruolo)
-    @user = User.find_by(email: session_params[:email])
+    session_params = params.permit(:username, :password)
+    @user = User.find_by(username: session_params[:username])
     if @user && @user.authenticate(session_params[:password])
       session[:user_id] = @user.id
       redirect_to @user

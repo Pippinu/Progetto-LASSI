@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    # Non richiede login prima delle action Create e New
+    # Non richiede login prima delle action Create e New, before_action applicato in application_controller
     skip_before_action :require_login, only: [:new, :create]
 
     def show
@@ -27,6 +27,6 @@ class UsersController < ApplicationController
   
     private 
     def user_params
-        params.require(:user).permit(:username, :password, :ruolo)
+        params.require(:user).permit(:username, :password, :password_confirmation, :ruolo)
     end
   end

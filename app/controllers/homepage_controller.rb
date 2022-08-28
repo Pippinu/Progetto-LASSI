@@ -1,13 +1,7 @@
 class HomepageController < ApplicationController
-  def index
-  end
+  skip_before_action :require_login, only: [:home]
 
   def home
   end
 
-  def login
-  end
-
-  def signin
-  end
 end
