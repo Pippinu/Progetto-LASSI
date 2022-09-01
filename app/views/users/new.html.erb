@@ -33,7 +33,7 @@
                     <label class="form-label" for="form2Example22">Conferma Password</label>
                   </div>
 
-                  <%= f.select(:ruolo, options_for_select([['Guest', 1], ['Utente', 2], ['Manager', 3]]), {}, {class: "form-select mb-3"}) %>
+                  <%= f.select(:ruolo, options_for_select([['Content Creator', 1], ['Manager', 2]]), {}, {class: "form-select mb-3"}) %>
 
                   <div class="text-center pt-1 mb-5 pb-1 d-grid gap-2">
                     <%= f.submit "Registrati", :class => "btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"%>
